@@ -1,0 +1,18 @@
+﻿@using EVA.Models
+@using System.Net.Http
+@using Newtonsoft.Json
+
+
+@model NasaApodViewModel
+
+<h2>@Model.Title</h2>
+<p>@Model.Explanation</p>
+<img src="@Model.Url" alt="@Model.Title" />
+
+<hr />
+
+<form method="get" asp-action="Index">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" value="@Model.Date" />
+    <button type="submit">Get APOD</button>
+</form>
