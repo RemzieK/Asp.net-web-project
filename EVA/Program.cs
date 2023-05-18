@@ -24,4 +24,12 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "Apod",
+    pattern: "apod/{date?}",
+    defaults: new { controller = "Home", action = "Apod" });
+
+
+
+
 app.Run();

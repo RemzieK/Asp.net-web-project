@@ -10,7 +10,7 @@ namespace EVA.Models
 {
     public class NasaApodService
     {
-        private readonly string baseAddress = "https://api.nasa.gov/planetary/apod/";
+        private readonly string baseAddress = "https://api.nasa.gov/planetary/apod";
         private readonly HttpClient httpClient;
         private readonly string apiKey= "VHwQ19sgMonCG0ajaqNWRPGO3NJoJG1nbKqvnI15";
 

@@ -13,7 +13,8 @@ namespace EVA.Controllers
         {
             _logger = logger;
         }
-        public async Task<IActionResult> Index(string date)
+
+        public async Task<IActionResult> Apod(string date)
         {
             if (string.IsNullOrEmpty(date))
             {
@@ -22,8 +23,8 @@ namespace EVA.Controllers
 
             var service = new NasaApodService();
             var apodInfo = await service.GetApodInfo(date);
-          
-            //ViewBag.Date = date;
+
+
             var model = new NasaApodViewModel
             {
                 Date = date,
@@ -32,15 +33,15 @@ namespace EVA.Controllers
                 Url = apodInfo.Url
             };
 
-            return View(model);
+            return View("~/Views/Home/Apod.cshtml", model);
 
         }
-   
+        public IActionResult Index()
+        { 
+           return View("~/Views/Home/Index.cshtml");
+       }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+      
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
