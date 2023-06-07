@@ -1,5 +1,7 @@
 ﻿using EVA.Models;
 using Microsoft.AspNetCore.Mvc;
+using NasaApodExample.Controllers;
+using NasaApodExample.Models;
 using System.Diagnostics;
 using System.Reflection;
 
@@ -8,40 +10,47 @@ namespace EVA.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+       
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+      
         }
 
-        public async Task<IActionResult> Apod(string date)
+        public async Task<ActionResult> Apod()
         {
-            if (string.IsNullOrEmpty(date))
-            {
-                date = DateTime.Today.ToString("yyyy-MM-dd");
-            }
-
-            var service = new NasaApodService();
-            var apodInfo = await service.GetApodInfo(date);
-
-
-            var model = new NasaApodViewModel
-            {
-                Date = date,
-                Title = apodInfo.Title,
-                Explanation = apodInfo.Explanation,
-                Url = apodInfo.Url
-            };
-
-            return View("~/Views/Home/Apod.cshtml", model);
-
+            ApodController apodController = new ApodController();
+            ApodModel? apod = await apodController.GetApodData();
+            return View(apod);
         }
+
         public IActionResult Index()
         { 
            return View("~/Views/Home/Index.cshtml");
        }
 
-      
+        public IActionResult Planets()
+        {
+            return View();
+        }
+
+        public IActionResult Galaxies()
+        {
+            return View();
+        }
+
+        public IActionResult Austronauts()
+        {
+            return View();
+        }
+
+        public IActionResult Aboutus()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

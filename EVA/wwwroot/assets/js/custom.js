@@ -134,7 +134,6 @@
 
 	
 	
-	
 
 	// Menu Dropdown Toggle
 	if($('.menu-trigger').length){

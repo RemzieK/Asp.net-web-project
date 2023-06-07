@@ -1,32 +1,35 @@
-﻿using EVA.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Net.Http;
+using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
+using NasaApodExample.Models;
 
-namespace EVA.Controllers
+namespace NasaApodExample.Controllers
 {
     public class ApodController : Controller
     {
-       // [HttpGet]
-        //public async Task<IActionResult> Apod(string date)
-        //{
-        //    if (string.IsNullOrEmpty(date))
-        //    {
-        //        date = DateTime.Today.ToString("yyyy-MM-dd");
-        //    }
+        public async Task<ApodModel> GetApodData()
+        {
+            string apiKey = "1sE8xPiPS0UEox0lNzCyduo8GLuENVRjvN7q0SMV";
+            string apiUrl = $"https://api.nasa.gov/planetary/apod?api_key={apiKey}";
 
-        //    var service = new NasaApodService();
-        //    var apodInfo = await service.GetApodInfo(date);
-
-
-        //    var model = new NasaApodViewModel
-        //    {
-        //        Date = date,
-        //        Title = apodInfo.Title,
-        //        Explanation = apodInfo.Explanation,
-        //        Url = apodInfo.Url
-        //    };
-
-        //    return View("~/Views/Home/Apod.cshtml",model);
-
-        //}
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    ApodModel apod = JsonConvert.DeserializeObject<ApodModel>(json);
+                    return apod;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

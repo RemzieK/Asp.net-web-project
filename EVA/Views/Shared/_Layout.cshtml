@@ -63,15 +63,19 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href=" @Url.Action("Home", "Index")" class="active">Home</a></li>
-                            <li><a href="planets.html">Planets</a></li>
-                            <li><a href="galaxies.html">Galaxies</a></li>
-                            <li><a href="austronauts.html">Austronauts</a></li>
-                            <li><a href="/apod">Apod</a></li>
-                            <li><a href="aboutus.html">About us</a></li>
+                            <li><a href="@Url.Action("Index", "Home")" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">Home</a></li>
+                            <li><a href="/planets" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Planets" ? "active" : "")">Planets</a></li>
+                            <li><a href="/galaxies" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Galaxies" ? "active" : "")">Galaxies</a></li>
+                            <li><a href="/astronauts" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Austronauts" ? "active" : "")">Austronauts</a></li>
+                            <li><a href="/apod" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Apod" ? "active" : "")">Apod</a></li>
+                            <li><a href="/aboutus" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Aboutus" ? "active" : "")">About us</a></li>
                             <li><a href="registration.html">LogIn/SignIn</a></li>
                             <li><a href="profile.html">Profile</a></li>
                         </ul>
+
+
+
+
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -88,19 +92,44 @@
         </main>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>
-                        Copyright © 2023 <a href="#">EVA</a> Spacewalk. All rights reserved.
-                        &nbsp;&nbsp;
+    <!-- FOOTER -->
+    <footer class="w-100 py-4 flex-shrink-0">
+        <div class="container py-4">
+            <div class="row gy-4 gx-5">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="h1 text-white">EVA</h5>
+                    <p>The spacewalk of your life!</p>
+                    <p>&copy; Copyrights 2023 EVA. All rights reserved. </p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Pages</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apod.html">Apod</a></li>
+                        <li><a href="austronauts.html">Astronauts</a></li>
+                        <li><a href="galaxies.html">Galaxies</a></li>
+                        <li><a href="planets.html">Planets</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="abourus.html">About us</a></li>
+                        <li><a href="registration">LogIn/SignIn</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Discover</h5>
+                    <p>At EVA, we are passionate about all things space-related, so our website features a wide range of content for all space-fans. So what are you waiting for? Come and explore the wonders of space with EVA!</p>
+
                 </div>
             </div>
         </div>
     </footer>
-
-
+    
+    <!--====== FOOTER ONE PART ENDS ======-->
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

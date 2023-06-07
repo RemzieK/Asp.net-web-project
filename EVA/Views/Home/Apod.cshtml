@@ -3,7 +3,52 @@
 @using Newtonsoft.Json
 
 
-@model NasaApodViewModel
+
+@model NasaApodExample.Models.ApodModel
+
+<div class="nasaapod">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="section-heading">
+                    <div class="line-dec"></div>
+                    <h2>NASA Apod <em>Api</em>.</h2>
+                </div>
+  
+
+@if (Model != null)
+{
+                    <div class="apod">
+                        <p class="apod"> @Model.Title</p>
+                        @Model.Explanation
+                        <img src="@Model.Url" alt="@Model.Title" />
+
+                        <hr />
+                    </div>
+
+                    <form method="get" asp-controller="Apod" asp-action="Apod">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" value="@Model.Date" />
+                        <button type="submit">Get APOD</button>
+                    </form>
+}
+else
+{
+                    <p>The server is temporarily unable to service your request. Please try again later.</p>
+}
+
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*@model NasaApodData
 <div class="apod">
    <p class="apod"> @Model.Title</p>
 @Model.Explanation
@@ -17,3 +62,4 @@
     <input type="date" id="date" name="date" value="@Model.Date" />
     <button type="submit">Get APOD</button>
 </form>
+*@
