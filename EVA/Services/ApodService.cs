@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Net.Http;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using EVA.Models;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Mvc;
-using NasaApodExample.Models;
 
-namespace NasaApodExample.Controllers
+namespace EVA.Services
 {
-    public class ApodController : Controller
+    public class ApodService
     {
-        public async Task<ApodModel> GetApodData()
+        public async Task<ApodDto?> GetApodData()
         {
             string apiKey = "1sE8xPiPS0UEox0lNzCyduo8GLuENVRjvN7q0SMV";
             string apiUrl = $"https://api.nasa.gov/planetary/apod?api_key={apiKey}";
@@ -22,7 +18,7 @@ namespace NasaApodExample.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     string json = await response.Content.ReadAsStringAsync();
-                    ApodModel apod = JsonConvert.DeserializeObject<ApodModel>(json);
+                    ApodDto? apod = JsonConvert.DeserializeObject<ApodDto>(json);
                     return apod;
                 }
                 else

@@ -1,12 +1,13 @@
-﻿<!-- ***** Header Area End ***** -->
+﻿@model AstronautsViewModel
+
 
 <div class="page-heading">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h6>Welcome to Eva</h6>
-        <h2>Discover the Austronauts</h2>
-        <span>Home > <a href="/austronauts">Austronauts</a></span>
+        <h6>@Model.WelcomeMessage</h6>
+                <h2>@Model.AstronautsTitle</h2>
+                <span>Home > <a href="/austronauts">@Model.AstronautsTitle</a></span>
       </div>
     </div>
   </div>
@@ -21,7 +22,7 @@
                 <img src="assets/images/yuri.jpg" alt="pic" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>Yuri Gagarin</h4>
+                                        <h4>@Model.YuriName</h4>
                   </div>
                 </div>
               </div>
@@ -32,7 +33,7 @@
                 <img src="assets/images/neil.jpg" alt="pic" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>Neil Armstrong</h4>
+                                        <h4>@Model.NailName</h4>
                   </div>
                 </div>
               </div>
@@ -43,7 +44,7 @@
                 <img src="assets/images/alan.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>Alan B. Shepard Jr.</h4>
+                                        <h4>@Model.AlanName</h4>
                   </div>
                 </div>
               </div>
@@ -54,7 +55,7 @@
                 <img src="assets/images/valentina.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>Valentina Tereshkova</h4>
+                                        <h4>@Model.ValentinaName</h4>
                   </div>
                 </div>
               </div>
@@ -65,7 +66,7 @@
                 <img src="assets/images/john.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>John Glenn Jr.</h4>
+                                        <h4>@Model.JohnName</h4>
                   </div>
                 </div>
               </div>
@@ -76,7 +77,7 @@
                 <img src="assets/images/james.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>James Lovell Jr.</h4>
+                                        <h4>@Model.JamesName</h4>
                   </div>
                 </div>
               </div>
@@ -87,7 +88,7 @@
                 <img src="assets/images/sally.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>Dr.Sally Ride</h4>
+                                        <h4>@Model.SallyName</h4>
                   </div>
                 </div>
               </div>
@@ -98,7 +99,7 @@
                 <img src="assets/images/chris.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>Chris Hadfield</h4>
+                                        <h4>@Model.ChrisName</h4>
                   </div>
                 </div>
               </div>
@@ -109,7 +110,7 @@
                  <img src="assets/images/laika.jpg" alt="" style="border-radius: 20px;">
                   <div class="hover-effect">
                      <div class="content">
-                       <h4>Laika</h4>
+                                        <h4>@Model.LaikaName</h4>
                       </div>
                   </div>
                </div>
@@ -128,24 +129,24 @@
      <section class="page-section1" id="services">
       <div class="container">
           <div class="text-center">
-              <h3 class="section-heading text-uppercase">Austronauts</h3>
-            <h3 class="section-subheading text-muted">Astronauts push the boundaries of human exploration, inspiring us all to reach for the stars.</h3>
+            <h3 class="section-heading text-uppercase">@Model.AstronautsTitle</h3>
+            <h3 class="section-subheading text-muted">@Model.BlogText</h3>
           </div>
           <div class="row text-center">
               <div class="col-md-4">
 
-                <h3 class="my-3">Intense Training and Preparation</h3>
-                <p class="text-muted">Astronauts undergo rigorous physical training to build strength, endurance, and cardiovascular fitness, as they need to adapt to the physically demanding conditions of space travel and spacewalks. They receive psychological training to develop resilience, teamwork, and coping strategies, as they may face isolation, long-duration missions, and potential emergencies during their time in space.</p>
+                <h3 class="my-3">@Model.BlogOneTitle</h3>
+                <p class="text-muted">@Model.BlogOneContent  </p>
               </div>
               <div class="col-md-4">
 
-                <h3 class="my-3">Advancing Scientific Knowledge</h3>
-                <p class="text-muted">Astronauts conduct experiments in microgravity environments that provide unique opportunities for scientific discovery across disciplines like physics, chemistry, biology, and human health, leading to breakthroughs and advancements not possible on Earth. They capture stunning images and collect data on Earth's atmosphere, land, and oceans, contributing to our understanding of climate change, weather patterns, natural disasters, and the overall health of our planet.</p>
+                <h3 class="my-3">@Model.BlogTwoTitle</h3>
+                <p class="text-muted">@Model.BlogTwoContent</p>
               </div>
               <div class="col-md-4">
 
-                <h3 class="my-3">Global Ambassadors of Exploration</h3>
-                <p class="text-muted">Astronauts represent their respective countries or space agencies, highlighting the importance of international cooperation in space exploration, fostering diplomacy, and promoting peaceful partnerships for the advancement of scientific and technological endeavors. Astronauts inspire people of all ages and backgrounds to dream big and pursue careers in science, technology, engineering, and mathematics (STEM), serving as role models who ignite curiosity and encourage the next generation to push the boundaries of human knowledge.</p>
+                <h3 class="my-3">@Model.BlogThreeTitle</h3>
+                <p class="text-muted">@Model.BlogThreeContent </p>
               </div>
           </div>
       </div>
@@ -154,8 +155,8 @@
   <section class="page-section bg-light" id="portfolio">
       <div class="container">
           <div class="text-center">
-              <h3 class="section-heading text-uppercase">Meet the Austronauts</h3>
-            <h3 class="section-subheading text-muted">Astronauts are pioneers who venture into the unknown, expanding our horizons and inspiring us to embrace the wonders of the universe.</h3>
+              <h3 class="section-heading text-uppercase">@Model.MeetAstroTitle</h3>
+            <h3 class="section-subheading text-muted">@Model.MeetAstroText </h3>
           </div>
           <div class="row">
               <div class="col-lg-4 col-sm-6 mb-4">
@@ -168,8 +169,8 @@
                           <img class="img-fluid" src="assets/images/austro/yuri1.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Yuri Gagarin</div>
-                          <div class="portfolio-caption-subheading text-muted">Russian</div>
+                        <div class="portfolio-caption-heading">@Model.YuriName</div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.RussianNationality</div>
                       </div>
                   </div>
               </div>
@@ -183,8 +184,8 @@
                         <img class="img-fluid" src="assets/images/austro/neil2.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Neil Armstrong</div>
-                          <div class="portfolio-caption-subheading text-muted">American</div>
+                          <div class="portfolio-caption-heading">@Model.NailName</div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.AmericanNationality</div>
                       </div>
                   </div>
               </div>
@@ -198,8 +199,8 @@
                           <img class="img-fluid" src="assets/images/austro/alan3.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Alan B. Shepard Jr.</div>
-                          <div class="portfolio-caption-subheading text-muted">American</div>
+                        <div class="portfolio-caption-heading">@Model.AlanName</div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.AmericanNationality</div>
                       </div>
                   </div>
               </div>
@@ -213,8 +214,8 @@
                           <img class="img-fluid" src="assets/images/austro/valentina4.png" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Valentina Tereshkova</div>
-                          <div class="portfolio-caption-subheading text-muted">Russian</div>
+                        <div class="portfolio-caption-heading">@Model.ValentinaName </div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.RussianNationality</div>
                       </div>
                   </div>
               </div>
@@ -228,8 +229,8 @@
                         <img class="img-fluid" src="assets/images/austro/john5.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">John Glenn Jr.</div>
-                          <div class="portfolio-caption-subheading text-muted">American</div>
+                          <div class="portfolio-caption-heading">@Model.JohnName</div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.AmericanNationality</div>
                       </div>
                   </div>
               </div>
@@ -243,8 +244,8 @@
                         <img class="img-fluid" src="assets/images/austro/james6.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">James Lovell Jr.</div>
-                          <div class="portfolio-caption-subheading text-muted">American</div>
+                        <div class="portfolio-caption-heading">@Model.JamesName</div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.AmericanNationality</div>
                       </div>
                   </div>
               </div>
@@ -259,8 +260,8 @@
                         <img class="img-fluid" src="assets/images/austro/sally7.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Dr. Sally Ride</div>
-                        <div class="portfolio-caption-subheading text-muted">American</div>
+                        <div class="portfolio-caption-heading">@Model.SallyName</div>
+                        <div class="portfolio-caption-subheading text-muted">@Model.AmericanNationality</div>
                     </div>
                 </div>
             </div>
@@ -276,8 +277,8 @@
                         <img class="img-fluid" src="assets/images/austro/chris8.jpg" alt="..." />
                   </a>
                   <div class="portfolio-caption">
-                      <div class="portfolio-caption-heading">Chris Hadfield</div>
-                      <div class="portfolio-caption-subheading text-muted">Canadian</div>
+                        <div class="portfolio-caption-heading">@Model.ChrisName</div>
+                      <div class="portfolio-caption-subheading text-muted">@Model.CanadianNationality</div>
                   </div>
               </div>
           </div>
@@ -293,8 +294,8 @@
                         <img class="img-fluid" src="assets/images/austro/laika9.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Laika</div>
-                        <div class="portfolio-caption-subheading text-muted">Soviet</div>
+                        <div class="portfolio-caption-heading">@Model.LaikaName</div>
+                        <div class="portfolio-caption-subheading text-muted">@Model.SovietNationality</div>
                     </div>
                 </div>
             </div>
@@ -314,23 +315,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Yuri Gagarin</h2>
-                            <p class="item-intro text-muted ">The first human to journey into outer space, opening up the realm of space exploration for all of humanity.</p>
+                            <h2 class="text-uppercase">@Model.YuriName</h2>
+                            <p class="item-intro text-muted ">@Model.YuriText</p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/yuri1.jpg" alt="..." />
-                            <p class="p1">Yuri Gagarin, born on March 9, 1934, in the village of Klushino, Russia, made history on April 12, 1961, as the first human to orbit the Earth, completing one orbit during his 108-minute mission aboard the Vostok 1 spacecraft. His achievement marked a significant milestone in the Space Race between the Soviet Union and the United States, propelling him to worldwide acclaim as an iconic figure in space exploration. Tragically, Gagarin's life was cut short on March 27, 1968, when the MiG-15 jet he was piloting crashed during a routine training flight. Despite his untimely death, Gagarin's legacy as a pioneering astronaut and symbol of human achievement in space endures, inspiring generations of future explorers.</p>
+                            <p class="p1">@Model.YuriContent</p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Name:</strong>
-                                      Yuri Gagarin
+                                      @Model.YuriName
                                   </li>
                                   <li>
                                       <strong>Nationality:</strong>
-                                      Russian
+                                    @Model.RussianNationality
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -349,23 +350,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Neil Armstrong</h2>
-                            <p class="item-intro text-muted">Neil Armstrong forever left his mark on history as the first person to set foot on the moon during the Apollo 11 mission in 1969, inspiring generations with his "one small step for man, one giant leap for mankind.</p>
+                              <h2 class="text-uppercase">@Model.NailName</h2>
+                            <p class="item-intro text-muted">@Model.NailText </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/neil2.jpg" alt="..." />
-                            <p class="p1">Neil Armstrong, an American astronaut, made history on July 20, 1969, when he became the first person to set foot on the moon as part of the Apollo 11 mission, uttering his famous words, "That's one small step for man, one giant leap for mankind." Prior to his lunar landing, Armstrong served as a naval aviator and test pilot, accumulating invaluable experience and expertise. His remarkable achievement not only symbolized the triumph of human exploration but also sparked a new era of scientific discovery and inspired generations to reach for the stars. Tragically, Armstrong passed away on August 25, 2012, leaving behind a lasting legacy as a pioneer in space exploration.</p>
+                            <p class="p1">@Model.NailContent </p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Name:</strong>
-                                      Neil Armstrong
+                                     @Model.NailName
                                   </li>
                                   <li>
                                       <strong>Nationality:</strong>
-                                      American
+                                      @Model.AmericanNationality
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                  @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -384,24 +385,24 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Alan B. Shepard Jr.</h2>
-                            <p class="item-intro text-muted">Alan B. Shepard Jr., an American astronaut, made history as the first American to travel into space during his suborbital flight aboard the Freedom 7 spacecraft on May 5, 1961.</p>
+                              <h2 class="text-uppercase">@Model.AlanName</h2>
+                            <p class="item-intro text-muted">@Model.AlanText  </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/alan3.jpg" alt="..." />
-                            <p class="p1">Alan B. Shepard Jr., an American astronaut and naval aviator, made history on May 5, 1961, as the first American to travel to space during the Mercury-Redstone 3 mission, also known as Freedom 7. His 15-minute suborbital flight reached a maximum altitude of 187.5 kilometers (116.5 miles) and paved the way for future manned space missions. Shepard later played a crucial role in the Apollo program, commanding the Apollo 14 mission in 1971, where he became the fifth person to walk on the moon. His accomplishments and contributions to space exploration continue to inspire and leave a lasting impact.</p>
+                            <p class="p1">@Model.AlanContent </p>
 
                               <ul class="list-inline">
                                   <li>
                                       <strong>Name:</strong>
-                                      Alan B. Shepard Jr.
+                                      @Model.AlanName
                                   </li>
                                   <li>
                                       <strong>Nationality:</strong>
-                                      American
+                                      @Model.AmericanNationality
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                  @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -420,23 +421,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Valentina Tereshkova</h2>
-                            <p class="item-intro text-muted">Valentina Tereshkova, a Russian cosmonaut, made history on June 16, 1963, as the first woman to travel to space, orbiting the Earth aboard the Vostok 6 spacecraft and blazing a trail for women in space exploration.</p>
+                              <h2 class="text-uppercase">@Model.ValentinaName</h2>
+                            <p class="item-intro text-muted">@Model.ValentinaText </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/valentina4.png" alt="..." />
-                            <p class="p1">Valentina Tereshkova, a Russian cosmonaut, made history on June 16, 1963, when she became the first woman to travel to space aboard the Vostok 6 spacecraft, orbiting the Earth 48 times in just under three days. Before her space mission, Tereshkova worked as a textile worker and a skydiver, which contributed to her selection as a cosmonaut. Her groundbreaking achievement opened doors for women in space exploration and inspired future generations of female astronauts to follow in her footsteps. Tereshkova remains a prominent figure in space history and a symbol of women's contribution to the field.</p>
+                            <p class="p1">@Model.ValentinaContent </p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Name:</strong>
-                                      Valentina Tereshkova
+                                      @Model.ValentinaName
                                   </li>
                                   <li>
                                       <strong>Nationality:</strong>
-                                      Russian
+                                    @Model.RussianNationality
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                  @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -455,23 +456,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">John Glenn Jr.</h2>
-                            <p class="item-intro text-muted">John Glenn Jr., an American astronaut and senator, made history on February 20, 1962, as the first American to orbit the Earth during his Friendship 7 mission, solidifying his legacy as a pioneering space explorer and national hero.</p>
+                              <h2 class="text-uppercase">@Model.JohnName</h2>
+                            <p class="item-intro text-muted">@Model.JohnText  </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/john5.jpg" alt="..." />
-                            <p class="p1">John Glenn Jr., an American astronaut, aviator, and senator, made history on February 20, 1962, when he became the first American to orbit the Earth aboard the Friendship 7 spacecraft, completing three orbits during his five-hour mission. Glenn's successful flight was a pivotal moment in the Space Race and boosted national pride during the early days of human space exploration. After retiring from NASA, Glenn entered politics and served as a U.S. Senator from Ohio for 24 years, further contributing to his notable career of public service and his lasting impact on American history.</p>
+                            <p class="p1">@Model.JohnContent</p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Name:</strong>
-                                      John Glenn Jr.
+                                      @Model.JohnName
                                   </li>
                                   <li>
                                       <strong>Nationality:</strong>
-                                      American
+                                      @Model.AmericanNationality
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -490,24 +491,24 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">James Lovell Jr.</h2>
-                            <p class="item-intro text-muted">James Lovell Jr., an American astronaut, led the Apollo 13 mission, showcasing remarkable resilience and teamwork during a critical space crisis.</p>
+                              <h2 class="text-uppercase">@Model.JamesName</h2>
+                            <p class="item-intro text-muted">@Model.JamesText </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/james6.jpg" alt="..." />
                             <p class="p1">
-                                James Lovell Jr., an American astronaut and naval aviator, is best known for his role as the commander of the ill-fated Apollo 13 mission in 1970. After an oxygen tank explosion onboard the spacecraft, Lovell and his crew faced a life-threatening situation in space, but through their resourcefulness, problem-solving, and the tireless efforts of NASA's ground control team, they safely returned to Earth after a harrowing four-day journey, demonstrating incredible ingenuity and teamwork in the face of adversity. Lovell's leadership and the lessons learned from the Apollo 13 mission have had a lasting impact on space exploration, astronaut training, and mission planning.</p>
+                                @Model.JamesContent </p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Name:</strong>
-                                    James Lovell Jr.
+                                    @Model.JamesName
                                   </li>
                                   <li>
                                       <strong>Nationality:</strong>
-                                      American
+                                      @Model.AmericanNationality
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                  @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -527,23 +528,23 @@
                     <div class="col-lg-12">
                         <div class="modal-body">
                             <!-- Project details-->
-                            <h2 class="text-uppercase">Dr. Sally Ride</h2>
-                            <p class="item-intro text-muted ">Dr. Sally Ride, an American astronaut and physicist, became the first American woman to travel to space, inspiring generations and breaking barriers for women in science and exploration.</p>
+                            <h2 class="text-uppercase">@Model.SallyName</h2>
+                            <p class="item-intro text-muted ">@Model.SallyText </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/sally7.jpg" alt="..." />
-                            <p class="p1">Dr. Sally Ride, an American astronaut and physicist, made history on June 18, 1983, as the first American woman to travel to space, aboard the Space Shuttle Challenger during the STS-7 mission. As a mission specialist, Ride played a vital role in conducting experiments and operating the robotic arm. Following her pioneering spaceflight, Ride continued to contribute to NASA and became a passionate advocate for science education, co-founding Sally Ride Science to inspire young students, especially girls, to pursue careers in STEM fields. Her legacy as a trailblazer and advocate for scientific exploration and education remains an inspiration to this day.</p>
+                            <p class="p1">@Model.SallyContent </p>
                             <ul class="list-inline">
                                 <li>
                                     <strong>Name:</strong>
-                                    Sally Ride
+                                    @Model.SallyName
                                 </li>
                                 <li>
                                     <strong>Nationality:</strong>
-                                    American
+                                    @Model.AmericanNationality
                                 </li>
                             </ul>
                             <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                 <i class="fas fa-xmark me-1"></i>
-                                Close
+                                @Model.CloseButton
                             </button>
                         </div>
                     </div>
@@ -564,23 +565,23 @@
                 <div class="col-lg-12">
                     <div class="modal-body">
                         <!-- Project details-->
-                        <h2 class="text-uppercase">Chris Hadfield</h2>
-                            <p class="item-intro text-muted">Chris Hadfield, a Canadian astronaut, captivated the world with his social media presence and command of the International Space Station, inspiring a new generation of space enthusiasts.</p>
+                        <h2 class="text-uppercase">@Model.ChrisName</h2>
+                            <p class="item-intro text-muted">@Model.ChrisText </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/chris8.jpg" alt="..." />
-                            <p class="p1"> Chris Hadfield, a renowned Canadian astronaut, gained international fame for his time as the commander of the International Space Station (ISS) during Expedition 35. His engaging videos and stunning photographs, shared through social media, offered a unique perspective of life in space and captured the imagination of millions worldwide. Prior to his ISS command, Hadfield served as a test pilot and flew on two space shuttle missions, accumulating a total of 166 days in space. His contributions to space exploration and his efforts to make science accessible to the public have left a lasting impact on the global space community.</p>
+                            <p class="p1">@Model.ChrisContent  </p>
                         <ul class="list-inline">
                             <li>
                                 <strong>Name:</strong>
-                                Chris Hadfield
+                               @Model.ChrisName
                             </li>
                             <li>
                                 <strong>Nationality:</strong>
-                                Canadian
+                                @Model.CanadianNationality
                             </li>
                         </ul>
                         <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                             <i class="fas fa-xmark me-1"></i>
-                            Close
+                            @Model.CloseButton
                         </button>
                     </div>
                 </div>
@@ -599,24 +600,24 @@
                     <div class="col-lg-12">
                         <div class="modal-body">
                             <!-- Project details-->
-                            <h2 class="text-uppercase">Laika</h2>
-                            <p class="item-intro text-muted">Laika, the Soviet space dog, made history as the first living creature to orbit the Earth aboard Sputnik 2 in 1957.</p>
+                            <h2 class="text-uppercase">@Model.LaikaName</h2>
+                            <p class="item-intro text-muted">@Model.LaikaText </p>
                             <img class="img-fluid d-block mx-auto" src="assets/images/austro/laika9.jpg" alt="..." />
-                            <p class="p1">Laika, a stray dog from Moscow, was selected by the Soviet space program for the historic mission aboard Sputnik 2. Launched on November 3, 1957, she became the first living being to orbit the Earth, reaching speeds of 28,000 kilometers per hour. Tragically, Laika's journey was one-way, as the technology to safely return animals from space had not yet been developed, and she perished a few hours after the launch. Although her sacrifice sparked ethical debates, Laika's mission contributed valuable data to early space exploration efforts and paved the way for future human spaceflights.</p>
+                            <p class="p1">@Model.LaikaContent </p>
 
                             <ul class="list-inline">
                                 <li>
                                     <strong>Name:</strong>
-                                    Laika
+                                    @Model.LaikaName
                                 </li>
                                 <li>
                                     <strong>Nationality:</strong>
-                                    Soviet
+                                    @Model.SovietNationality
                                 </li>
                             </ul>
                             <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                 <i class="fas fa-xmark me-1"></i>
-                                Close
+                                @Model.CloseButton
                             </button>
                         </div>
                     </div>

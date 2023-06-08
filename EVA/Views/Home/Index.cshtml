@@ -1,15 +1,17 @@
-﻿ <!-- ***** Main Banner Area Start ***** -->
+﻿ @model IndexViewModel
+
+<!-- ***** Main Banner Area Start ***** -->
 <div class="main-banner">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 align-self-center">
                 <div class="header-text">
-                    <h6>Welcome to EVA</h6>
-                    <h2>Experience a spacewalk on Earth!</h2>
-                    <p>At EVA, we are passionate about all things space-related, so our website features a wide range of content for all space-fans. So what are you waiting for? Come and explore the wonders of space with EVA!</p>
+                    <h6>@Model.WelcomeMessage</h6>
+                    <h2>@Model.ExperienceTitle</h2>
+                    <p>@Model.ExperienceText </p>
                     <div class="buttons">
                         <div class="border-button">
-                            <a href="aboutus.html">Sign in now!</a>
+                            <a href="aboutus.html">@Model.SignInTitle</a>
                         </div>
 
                     </div>
@@ -56,14 +58,14 @@
                                             <div class="blog-content">
                                                 <h5 class="blog-title">
                                                     <a href="javascript:void(0)">
-                                                        Our solar system
+                                                        @Model.SolarTitle
                                                     </a>
                                                 </h5>
 
                                                 <p class="text">
-                                                    Get to know more about our solar system. The eight planets Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.
+                                                    @Model.SolarText 
                                                 </p>
-                                                <a class="more" href="/planets">READ MORE</a>
+                                                <a class="more" href="/planets">@Model.ReadMoreButton</a>
                                             </div>
                                         </div>
                                         <!-- single blog -->
@@ -77,14 +79,14 @@
                                             <div class="blog-content">
                                                 <h5 class="blog-title">
                                                     <a href="javascript:void(0)">
-                                                        Galaxies
+                                                        @Model.GalaxiesTitle
                                                     </a>
                                                 </h5>
 
                                                 <p class="text">
-                                                    Get to know the galaxies. A hude collection of gas, dust, and billions of stars and their solar system, all held together by gravity.
+                                                    @Model.GalaxiesText 
                                                 </p>
-                                                <a class="more" href="/galaxies">READ MORE</a>
+                                                <a class="more" href="/galaxies">@Model.ReadMoreButton</a>
                                             </div>
                                         </div>
                                         <!-- single blog -->
@@ -100,14 +102,14 @@
                                             <div class="blog-content">
                                                 <h5 class="blog-title">
                                                     <a href="javascript:void(0)">
-                                                        Austronauts
+                                                        @Model.AstronautsTitle
                                                     </a>
                                                 </h5>
 
                                                 <p class="text">
-                                                    Get to know the person trained, equipped and deployed by a human spaceflight program to serve as a commander or a crew member abroud a spacecraft.
+                                                    @Model.AstronautsText 
                                                 </p>
-                                                <a class="more" href="/austronauts">READ MORE</a>
+                                                <a class="more" href="/austronauts">@Model.ReadMoreButton</a>
                                             </div>
                                         </div>
                                         <!-- single blog -->
@@ -144,7 +146,7 @@
                                                 <div class="col-lg-8">
                                                     <div class="section-heading">
                                                         <div class="line-dec"></div>
-                                                        <h1>Astronomy Picture of the Day</h1>
+                                <h1>@Model.ApodTitle</h1>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
@@ -156,8 +158,8 @@
                                                         <div class="icon">
                                                             <img src="assets/images/icon-02.png" alt="">
                                                         </div>
-                                                        <h4>Vast Collection of Astronomical Images</h4>
-                                                        <p>APOD has amassed a vast collection of stunning astronomical images since its launch in 1995. With over 10,000 featured images to date, it offers a visual journey through the cosmos.</p>
+                                <h4>@Model.ApodOneTitle</h4>
+                                <p>@Model.ApodOneText </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
@@ -167,8 +169,8 @@
                                                         <div class="icon">
                                                             <img src="assets/images/icon-04.png" alt="">
                                                         </div>
-                                                        <h4>Educational and Informative Content</h4>
-                                                        <p>APOD not only presents captivating visuals but also provides educational and informative descriptions written by astronomers. These explanations delve into the scientific concepts and phenomena depicted in the images, making it an excellent resource for both astronomy enthusiasts and those seeking to learn more about the universe. </p>
+                                <h4>@Model.ApodTwoTitle</h4>
+                                <p>@Model.ApodTwoText  </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
@@ -176,8 +178,8 @@
                                                         <div class="icon">
                                                             <img src="assets/images/icon-06.png" alt="">
                                                         </div>
-                                                        <h4>Community Engagement and Global Reach</h4>
-                                                        <p>APOD has a dedicated following worldwide and has become a hub for space enthusiasts and professionals alike. It encourages community engagement through its comment section, where users can discuss and share their thoughts about the featured images.</p>
+                                <h4>@Model.ApodThreeTitle</h4>
+                                <p>@Model.ApodThreeText </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -189,9 +191,9 @@
                                                 <div class="col-lg-12">
                                                     <div class="text-center">
                                                         <div class="content">
-                                                            <h2 class="fw-bold">About us</h2>
+                                    <h2 class="fw-bold">@Model.AboutUsTitle</h2>
                                                             <p>
-                                                                Eva is a captivating website dedicated to space enthusiasts, offering a mesmerizing array of content centered around planets, galaxies, and astronauts. With a focus on providing a wealth of information and breathtaking imagery, Eva serves as a hub for fans of space exploration.
+                                        @Model.AboutUsText 
                                                             </p>
                                                         </div>
                                                     </div>

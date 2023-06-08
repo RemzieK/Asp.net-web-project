@@ -1,7 +1,17 @@
+using EVA.IServices;
+using EVA.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ApodService>();
+builder.Services.AddScoped<IAboutUsService, AboutUsService>();
+builder.Services.AddScoped<IAstronautsService, AstronautsService>();
+builder.Services.AddScoped<IHomeService, HomeService>();
+builder.Services.AddScoped<IGalaxiesService, GalaxiesService>();
+builder.Services.AddScoped<IPlanetsService,PlanetsService>();
+builder.Services.AddScoped<IIndexService, IndexService>();
 
 
 var app = builder.Build();
@@ -48,6 +58,6 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "astronauts",
     pattern: "astronauts",
-    defaults: new { controller = "Home", action = "Austronauts" });
+    defaults: new { controller = "Home", action = "Astronauts" });
 
 app.Run();

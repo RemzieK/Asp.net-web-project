@@ -1,7 +1,7 @@
-﻿using EVA.Models;
+﻿using EVA.IServices;
+using EVA.Models;
+using EVA.Services;
 using Microsoft.AspNetCore.Mvc;
-using NasaApodExample.Controllers;
-using NasaApodExample.Models;
 using System.Diagnostics;
 using System.Reflection;
 
@@ -10,44 +10,59 @@ namespace EVA.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-       
+        private readonly IHomeService _homeService;
+        //private readonly ApodService _apodService;
+        //private readonly IAboutUsService _aboutUsService;
+        //private readonly IAstronautsService _astronautsService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHomeService homeService/*ApodService apodService, IAboutUsService aboutUsService, IAstronautsService astronautsService*/)
         {
             _logger = logger;
-      
+            _homeService = homeService;
+            // _apodService = apodService;
+            //_aboutUsService = aboutUsService;
+            //_astronautsService = astronautsService;
+
         }
 
         public async Task<ActionResult> Apod()
         {
-            ApodController apodController = new ApodController();
-            ApodModel? apod = await apodController.GetApodData();
+            //ApodDto? apod = await _apodService.GetApodData();
+            ApodDto? apod = await _homeService.GetApodData();
             return View(apod);
         }
 
         public IActionResult Index()
-        { 
-           return View("~/Views/Home/Index.cshtml");
+        {
+            var index = _homeService.GetIndexViewModel();
+            return View(index);
+           
        }
 
         public IActionResult Planets()
         {
-            return View();
+            var planet = _homeService.GetPlanetsViewModel();
+            return View(planet);
         }
 
         public IActionResult Galaxies()
         {
-            return View();
+            var galaxy = _homeService.GetGalaxiesViewModel();
+            return View(galaxy);
         }
 
-        public IActionResult Austronauts()
+        public IActionResult Astronauts()
         {
-            return View();
+            //  var astro = _astronautsService.GetAstronautsViewModel();
+            var astro = _homeService.GetAstronautsViewModel();
+            return View(astro);
         }
 
         public IActionResult Aboutus()
         {
-            return View();
+            // var model = _aboutUsService.GetAboutUsViewModel();
+            var model = _homeService.GetAboutUsViewModel();
+            return View(model);
         }
 
 

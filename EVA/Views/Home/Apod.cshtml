@@ -1,10 +1,8 @@
 ﻿@using EVA.Models
-@using System.Net.Http
-@using Newtonsoft.Json
 
 
 
-@model NasaApodExample.Models.ApodModel
+@model EVA.Models.ApodDto
 
 <div class="page-heading">
     <div class="container">
@@ -25,9 +23,9 @@
                         <hr />
                     </div>
 
-                    <form method="get" asp-controller="Apod" asp-action="Apod">
+                    <form method="get" asp-controller="Home" asp-action="Apod">
                         <label for="date">Date:</label>
-                        <input type="date" id="date" name="date" value="@Model.Date" />
+                        <input type="date" id="date" name="date" value="@Model.Date.ToString("yyyy-MM-dd")" />
                         <button type="submit">Get APOD</button>
                     </form>
 }
@@ -36,29 +34,7 @@ else
                     <p>The server is temporarily unable to service your request. Please try again later.</p>
 }
 
-</div>
+            </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-@*@model NasaApodData
-<div class="apod">
-   <p class="apod"> @Model.Title</p>
-@Model.Explanation
-<img src="@Model.Url" alt="@Model.Title" />
-
-<hr />
-</div>
-
-<form method="get" asp-controller="Apod" asp-action="Apod">
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" value="@Model.Date" />
-    <button type="submit">Get APOD</button>
-</form>
-*@

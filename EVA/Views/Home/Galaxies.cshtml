@@ -1,12 +1,12 @@
-﻿<!-- ***** Header Area End ***** -->
+﻿@model GalaxiesViewModel
 
 <div class="page-heading">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h6>Welcome to Eva</h6>
-        <h2>Discover the Galaxies</h2>
-        <span>Home > <a href="/galaxies">Galaxies</a></span>
+                <h6>@Model.WelcomeMessage</h6>
+                <h2>@Model.GalaxiesTitle</h2>
+                <span>Home > <a href="/galaxies">@Model.GalaxiesTitle</a></span>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
                 <img src="assets/images/andromeda.jpg" alt="pic" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                  <h4>Andromeda galaxy</h4>
+                                        <h4>@Model.Andromeda</h4>
                   </div>
                 </div>
               </div>
@@ -32,7 +32,7 @@
                 <img src="assets/images/antennae.jpg" alt="pic" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                    <h4>Antennae galaxy</h4>
+                                        <h4>@Model.Antennae</h4>
                   </div>
                 </div>
               </div>
@@ -43,7 +43,7 @@
                 <img src="assets/images/backward.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                  <h4>Backward galaxy</h4>
+                                        <h4>@Model.Backward</h4>
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
                 <img src="assets/images/blackeye.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                  <h4>Black Eye galaxy</h4>
+                                        <h4>@Model.Blackeye</h4>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@
                 <img src="assets/images/butterfly.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                  <h4>Butterfly galaxy</h4>
+                  <h4>@Model.Butterfly</h4>
                   </div>
                 </div>
               </div>
@@ -76,7 +76,7 @@
                 <img src="assets/images/cartweel.jpg" alt="" style="border-radius: 20px;">
                 <div class="hover-effect">
                   <div class="content">
-                  <h4>Cartweel galaxy</h4>
+                                        <h4>@Model.Cartwheel</h4>
                   </div>
                 </div>
               </div>
@@ -96,24 +96,24 @@
      <section class="page-section1" id="services">
       <div class="container">
           <div class="text-center">
-              <h3 class="section-heading text-uppercase">Galaxies</h3>
-            <h3 class="section-subheading text-muted">Galaxies are vast cosmic structures consisting of billions to trillions of stars, planets, and various celestial objects, exhibiting a wide range of shapes and sizes, and playing a vital role in understanding the universe's evolution and composition</h3>
+            <h3 class="section-heading text-uppercase">@Model.GalaxiesTitle</h3>
+            <h3 class="section-subheading text-muted">@Model.BlogText </h3>
           </div>
           <div class="row text-center">
               <div class="col-md-4">
 
-                <h3 class="my-3">Vastness and Diversity</h3>
-                <p class="text-muted">Galaxies are incredibly vast structures that contain billions to trillions of stars, as well as various other celestial objects like planets, moons, asteroids, and comets. They come in a wide range of shapes, sizes, and colors, showcasing a remarkable diversity. The three main types of galaxies are spiral galaxies (such as our Milky Way), elliptical galaxies, and irregular galaxies. Each type exhibits distinct characteristics in terms of their shape, structure, and distribution of stars.</p>
+                <h3 class="my-3">@Model.BlogOneTitle</h3>
+                <p class="text-muted">@Model.BlogOneText </p>
               </div>
               <div class="col-md-4">
 
-                <h3 class="my-3">Gravitational Dynamics</h3>
-                <p class="text-muted"> Gravity plays a crucial role in the formation and evolution of galaxies. The gravitational force between stars and other matter within a galaxy helps to shape its structure and motion. Galaxies are not static entities but are in a state of constant motion, with stars orbiting around a galactic center. The interactions between galaxies can also be influenced by gravity, leading to phenomena such as galaxy mergers or collisions. These gravitational dynamics shape the overall structure of the universe on both large and small scales.</p>
+                <h3 class="my-3">@Model.BlogTwoTitle</h3>
+                <p class="text-muted">@Model.BlogTwoText </p>
               </div>
               <div class="col-md-4">
 
-                <h3 class="my-3">Dark Matter</h3>
-                <p class="text-muted">A significant portion of a galaxy's mass is believed to be composed of dark matter. Dark matter is an invisible and mysterious form of matter that does not emit, absorb, or reflect light, making it difficult to detect directly. Its presence is inferred through its gravitational effects on visible matter. The gravitational pull of dark matter helps to hold galaxies together and prevents them from flying apart due to the high speeds at which stars and other objects are moving within them. The exact nature of dark matter remains one of the biggest mysteries in modern astrophysics, and ongoing research aims to uncover its properties and understand its role in galaxy formation and evolution.</p>
+                <h3 class="my-3">@Model.BlogThreeTitle</h3>
+                <p class="text-muted">@Model.BlogThreeText </p>
               </div>
           </div>
       </div>
@@ -122,8 +122,8 @@
   <section class="page-section bg-light" id="portfolio">
       <div class="container">
           <div class="text-center">
-              <h3 class="section-heading text-uppercase">Explore the Galaxies</h3>
-            <h3 class="section-subheading text-muted">Galaxies come in diverse shapes, sizes, and colors, ranging from majestic spirals with elegant arms to elliptical shapes and irregular formations. </h3>
+              <h3 class="section-heading text-uppercase">@Model.ExploreGalTitle</h3>
+            <h3 class="section-subheading text-muted">@Model.ExploreGalText  </h3>
           </div>
           <div class="row">
               <div class="col-lg-4 col-sm-6 mb-4">
@@ -136,8 +136,8 @@
                           <img class="img-fluid" src="assets/images/galaxies/andromeda1.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Andromeda Galaxy</div>
-                          <div class="portfolio-caption-subheading text-muted">Galaxiy in the Milky Way</div>
+                        <div class="portfolio-caption-heading">@Model.Andromeda</div>
+                        <div class="portfolio-caption-subheading text-muted">@Model.AndromedaPlace</div>
                       </div>
                   </div>
               </div>
@@ -151,8 +151,8 @@
                           <img class="img-fluid" src="assets/images/galaxies/antennae2.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Antennae Galaxies</div>
-                          <div class="portfolio-caption-subheading text-muted">Galaxies in Corvus</div>
+                        <div class="portfolio-caption-heading">@Model.Antennae</div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.AntennaePlace</div>
                       </div>
                   </div>
               </div>
@@ -166,8 +166,8 @@
                           <img class="img-fluid" src="assets/images/galaxies/backward3.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Backward Galaxy</div>
-                          <div class="portfolio-caption-subheading text-muted">Galaxy in Centaurus</div>
+                        <div class="portfolio-caption-heading">@Model.Backward</div>
+                        <div class="portfolio-caption-subheading text-muted">@Model.BackwardPlace</div>
                       </div>
                   </div>
               </div>
@@ -181,8 +181,8 @@
                           <img class="img-fluid" src="assets/images/galaxies/blackeye4.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Black Eye Galaxy</div>
-                          <div class="portfolio-caption-subheading text-muted">Galaxy in Coma Berencies</div>
+                        <div class="portfolio-caption-heading">@Model.Blackeye</div>
+                        <div class="portfolio-caption-subheading text-muted">@Model.BlackeyePlace</div>
                       </div>
                   </div>
               </div>
@@ -196,8 +196,8 @@
                           <img class="img-fluid" src="assets/images/galaxies/butterfly5.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Butterfly Galaxies</div>
-                          <div class="portfolio-caption-subheading text-muted">Galaxies in Virgo</div>
+                          <div class="portfolio-caption-heading">@Model.Butterfly</div>
+                          <div class="portfolio-caption-subheading text-muted">@Model.ButterflyPlace</div>
                       </div>
                   </div>
               </div>
@@ -211,8 +211,8 @@
                           <img class="img-fluid" src="assets/images/galaxies/cartwheel6.jpg" alt="..." />
                       </a>
                       <div class="portfolio-caption">
-                          <div class="portfolio-caption-heading">Cartwheel Galaxy</div>
-                          <div class="portfolio-caption-subheading text-muted">Galaxy in Sculptor</div>
+                        <div class="portfolio-caption-heading">@Model.Cartwheel</div>
+                        <div class="portfolio-caption-subheading text-muted">@Model.CartwheelPlace</div>
                       </div>
                   </div>
               </div>
@@ -235,23 +235,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Andromeda</h2>
-                            <p class="item-intro text-muted ">The Andromeda Galaxy is the closest spiral galaxy to the Milky Way and is on a collision course with our own galaxy.</p>
+                              <h2 class="text-uppercase">@Model.Andromeda</h2>
+                            <p class="item-intro text-muted ">@Model.AndromedaText</p>
                               <img class="img-fluid d-block mx-auto" src="assets/images/galaxies/andromeda1.jpg" alt="..." />
-                            <p class="p1">The Andromeda Galaxy, also known as Messier 31 or M31, is located approximately 2.537 million light-years away from Earth. It is a spiral galaxy similar in structure to our Milky Way. Andromeda is the largest galaxy in the Local Group, a collection of galaxies that includes the Milky Way and about 54 other smaller galaxies. In about 4.5 billion years, the Andromeda Galaxy is expected to collide with our Milky Way, resulting in a cosmic event known as a galactic merger.</p>
+                            <p class="p1">@Model.AndromedaContent </p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Galaxy:</strong>
-                                      Andromeda
+                                      @Model.Andromeda
                                   </li>
                                   <li>
                                       <strong>Place:</strong>
-                                      Milky Way
+                                    @Model.AndromedaPlace
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -270,23 +270,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Antennae</h2>
-                            <p class="item-intro text-muted">The Antennae Galaxies are a pair of interacting galaxies characterized by their long tidal tails and intense star formation.</p>
+                            <h2 class="text-uppercase">@Model.Antennae</h2>
+                            <p class="item-intro text-muted">@Model.AntennaeText </p>
                               <img class="img-fluid d-block mx-auto" src="assets/images/galaxies/antennae2.jpg" alt="..." />
-                            <p class="p1">The Antennae Galaxies, also designated as NGC 4038 and NGC 4039, are a pair of interacting galaxies located approximately 45 million light-years away in the constellation Corvus. The galaxies are undergoing a dramatic gravitational interaction, resulting in elongated tidal tails composed of gas, dust, and young stars. This interaction triggers intense star formation, making the Antennae Galaxies a rich laboratory for studying the effects of galactic collisions.</p>
+                            <p class="p1">@Model.AntennaeContent </p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Galaxy:</strong>
-                                      Antennae
+                                      @Model.Antennae
                                   </li>
                                   <li>
                                       <strong>Place:</strong>
-                                      Corvus
+                                    @Model.AntennaePlace
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -305,24 +305,24 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Backward</h2>
-                            <p class="item-intro text-muted">The "Backward" Galaxy, also known as NGC 4622, is a peculiar galaxy with a distinctive trailing spiral arm that appears to go against the usual rotation direction of galaxies.</p>
+                            <h2 class="text-uppercase">@Model.Backward</h2>
+                            <p class="item-intro text-muted">@Model.BackwardText</p>
                               <img class="img-fluid d-block mx-auto" src="assets/images/galaxies/backward3.jpg" alt="..." />
-                            <p class="p1">NGC 4622, often referred to as the "Backward Galaxy," is a peculiar galaxy located about 111 million light-years away in the constellation Centaurus. It stands out due to its unusual trailing spiral arm, which appears to be rotating in the opposite direction to most spiral galaxies. This peculiarity is thought to have been caused by a past merger or gravitational interaction with another galaxy, resulting in a reshaping of its structure.</p>
+                            <p class="p1">@Model.BackwardContent </p>
 
                               <ul class="list-inline">
                                   <li>
                                       <strong>Galaxy:</strong>
-                                      Backward
+                                      @Model.Backward
                                   </li>
                                   <li>
                                       <strong>Place:</strong>
-                                      Centaurus
+                                    @Model.BackwardPlace
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -341,23 +341,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Black Eye</h2>
-                            <p class="item-intro text-muted">The Black Eye Galaxy, or Messier 64, gets its name from the prominent dark band of dust that appears like a dark eye in the galaxy's bright nucleus.</p>
+                            <h2 class="text-uppercase">@Model.Blackeye</h2>
+                            <p class="item-intro text-muted">@Model.BlackeyeText </p>
                               <img class="img-fluid d-block mx-auto" src="assets/images/galaxies/blackeye4.jpg" alt="..." />
-                            <p class="p1">essier 64, known as the Black Eye Galaxy or Evil Eye Galaxy, is a spiral galaxy located about 24 million light-years away in the constellation Coma Berenices. It earned its name due to a prominent dark band of dust that crosses its bright nucleus, resembling a black eye. This galaxy is known for its high rate of star formation and a massive central structure called a "supermassive black hole."</p>
+                            <p class="p1">@Model.BlackeyeContent</p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Galaxy:</strong>
-                                      Black Eye
+                                      @Model.Blackeye
                                   </li>
                                   <li>
                                       <strong>Place:</strong>
-                                      Coma Berencies
+                                      @Model.BlackeyePlace
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                  @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -376,23 +376,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Butterfly</h2>
-                            <p class="item-intro text-muted">The Butterfly Galaxy, also called NGC 6302, is a planetary nebula resembling the shape of a butterfly due to its distinctive bipolar structure.</p>
+                              <h2 class="text-uppercase">@Model.Butterfly</h2>
+                            <p class="item-intro text-muted">@Model.ButterflyText </p>
                               <img class="img-fluid d-block mx-auto" src="assets/images/galaxies/butterfly5.jpg" alt="..." />
-                            <p class="p1">NGC 6302, commonly known as the Butterfly Galaxy or Bug Nebula, is a planetary nebula located approximately 3,800 light-years away in the constellation Scorpius. It earned its nickname due to its distinctive bipolar structure resembling the wings of a butterfly. This nebula is the result of a dying star, which shed its outer layers, and the intense radiation from its hot central star illuminates the surrounding gas, creating a striking visual appearance.</p>
+                            <p class="p1">@Model.ButterflyContent </p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Galaxy:</strong>
-                                      Butterfly
+                                      @Model.Butterfly
                                   </li>
                                   <li>
                                       <strong>Place:</strong>
-                                      Virgo
+                                      @Model.ButterflyPlace
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                @Model.CloseButton
                               </button>
                           </div>
                       </div>
@@ -411,23 +411,23 @@
                       <div class="col-lg-12">
                           <div class="modal-body">
                               <!-- Project details-->
-                              <h2 class="text-uppercase">Cartweel</h2>
-                            <p class="item-intro text-muted">The Cartwheel Galaxy is a peculiar ring galaxy formed from a collision between a smaller galaxy and a larger spiral galaxy, resulting in a spectacular ripple-like ring structure.</p>
+                            <h2 class="text-uppercase">@Model.Cartwheel</h2>
+                            <p class="item-intro text-muted">@Model.CartwheelText </p>
                               <img class="img-fluid d-block mx-auto" src="assets/images/galaxies/cartwheel6.jpg" alt="..." />
-                            <p class="p1">The Cartwheel Galaxy, designated as ESO 350-40, is a peculiar ring galaxy located about 500 million light-years away in the constellation Sculptor. It obtained its distinct appearance through a collision between a smaller galaxy and a larger spiral galaxy. The impact generated a shockwave that rippled through the galactic material, resulting in a circular wave of star formation and creating the ring-like structure seen today. The Cartwheel Galaxy is an excellent example of the transformative effects of galactic collisions.</p>
+                            <p class="p1">@Model.CartwheelContent </p>
                               <ul class="list-inline">
                                   <li>
                                       <strong>Galaxy:</strong>
-                                      Cartwheel
+                                    @Model.Cartwheel
                                   </li>
                                   <li>
                                       <strong>Place:</strong>
-                                      Sculptor
+                                    @Model.CartwheelPlace
                                   </li>
                               </ul>
                               <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                   <i class="fas fa-xmark me-1"></i>
-                                  Close
+                                @Model.CloseButton
                               </button>
                           </div>
                       </div>
