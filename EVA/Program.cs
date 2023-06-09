@@ -31,12 +31,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+   // name: "default",
+   // pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
-    name: "Apod",
+   name: "index",
+    pattern: "{controller=Home}/{action=Index}/{id?}",
+    defaults: new { controller = "Home", action = "Index" });
+
+app.MapControllerRoute(
+    name: "apod",
     pattern: "apod/{date?}",
     defaults: new { controller = "Home", action = "Apod" });
 
