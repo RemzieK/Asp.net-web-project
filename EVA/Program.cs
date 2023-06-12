@@ -1,5 +1,6 @@
 using EVA.IServices;
 using EVA.Services;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddScoped<IIndexService, IndexService>();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -27,13 +29,9 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
 app.UseRouting();
-
 app.UseAuthorization();
-
-//app.MapControllerRoute(
-   // name: "default",
-   // pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
    name: "index",
@@ -42,8 +40,9 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "apod",
-    pattern: "apod/{date?}",
+    pattern: "apod",
     defaults: new { controller = "Home", action = "Apod" });
+
 
 app.MapControllerRoute(
     name: "aboutus",

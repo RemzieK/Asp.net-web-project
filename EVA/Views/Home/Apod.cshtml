@@ -2,7 +2,7 @@
 
 
 
-@model EVA.Models.ApodDto
+@model EVA.Models.ApodDetailDto
 
 <div class="page-heading">
     <div class="container">
@@ -16,18 +16,20 @@
 @if (Model != null)
 {
                     <div class="apod">
-                        <p class="apod"> @Model.Title</p>
-                        @Model.Explanation
+                        <p class="apod"> @Model.Title </p>
+                        <p class="apod">@Model.Explanation</p>
                         <img src="@Model.Url" alt="@Model.Title" />
 
                         <hr />
                     </div>
 
-                    <form method="get" asp-controller="Home" asp-action="Apod">
+                    <form method="get" action="/apod">
                         <label for="date">Date:</label>
                         <input type="date" id="date" name="date" value="@Model.Date.ToString("yyyy-MM-dd")" />
                         <button type="submit">Get APOD</button>
                     </form>
+
+
 }
 else
 {

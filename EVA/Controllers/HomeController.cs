@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Reflection;
 
+
 namespace EVA.Controllers
 {
     public class HomeController : Controller
@@ -12,21 +13,19 @@ namespace EVA.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IHomeService _homeService;
        
-
         public HomeController(ILogger<HomeController> logger, IHomeService homeService)
         {
             _logger = logger;
             _homeService = homeService;
-           
-
         }
 
-        public async Task<ActionResult> Apod()
+        public async Task<ActionResult> Apod(DateTime? date)
         {
-           
-            ApodDto? apod = await _homeService.GetApodData();
+            ApodDetailDto? apod = await _homeService.GetApodData(date);
             return View(apod);
         }
+
+
 
         public IActionResult Index()
         {
@@ -49,19 +48,15 @@ namespace EVA.Controllers
 
         public IActionResult Astronauts()
         {
-            
             var astro = _homeService.GetAstronautsViewModel();
             return View(astro);
         }
-
         public IActionResult Aboutus()
         {
-           
+
             var model = _homeService.GetAboutUsViewModel();
             return View(model);
         }
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

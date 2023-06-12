@@ -1,5 +1,8 @@
 ﻿using EVA.IServices;
 using EVA.Models;
+using EVA.Services;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace EVA.Services
 {
@@ -11,6 +14,7 @@ namespace EVA.Services
         private readonly IGalaxiesService _galaxiesService;
         private readonly IPlanetsService _planetsService;
         private readonly IIndexService _indexService;
+        
 
         public HomeService(ApodService apodService, IAstronautsService astronautsService, IAboutUsService aboutUsService, IGalaxiesService galaxiesService, IPlanetsService planetsService, IIndexService indexService)
         {
@@ -21,11 +25,16 @@ namespace EVA.Services
             _planetsService = planetsService;
             _indexService = indexService;
         }
-        public Task<ApodDto?> GetApodData()
+        public Task<ApodDetailDto?> GetApodData(DateTime? date)
         {
-
-            return _apodService.GetApodData();
+            if (date == null)
+            {
+                date = DateTime.Today;
+            }
+            return _apodService.GetApodData(date.Value);
         }
+
+
 
         public AstronautsViewModel GetAstronautsViewModel()
         {
