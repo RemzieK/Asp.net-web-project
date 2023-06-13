@@ -11,51 +11,45 @@ namespace EVA.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IHomeService _homeService;
-       
-        public HomeController(ILogger<HomeController> logger, IHomeService homeService)
+        private readonly ApodService _apodService;
+
+        public HomeController(ILogger<HomeController> logger, ApodService apodService)
         {
             _logger = logger;
-            _homeService = homeService;
+            _apodService = apodService;
         }
 
         public async Task<ActionResult> Apod(DateTime? date)
         {
-            ApodDetailDto? apod = await _homeService.GetApodData(date);
+            ApodDto? apod = await _apodService.GetApodData(date ?? DateTime.Today);
             return View(apod);
         }
 
-
-
         public IActionResult Index()
         {
-            var index = _homeService.GetIndexViewModel();
-            return View(index);
-           
-       }
+            return RedirectToAction("Home", "Index");
+        }
 
         public IActionResult Planets()
         {
-            var planet = _homeService.GetPlanetsViewModel();
-            return View(planet);
+            return RedirectToAction("Home", "Planets");
         }
 
         public IActionResult Galaxies()
         {
-            var galaxy = _homeService.GetGalaxiesViewModel();
-            return View(galaxy);
+            return RedirectToAction("Home", "Galaxies");
         }
 
         public IActionResult Astronauts()
         {
-            var astro = _homeService.GetAstronautsViewModel();
-            return View(astro);
+            
+           return RedirectToAction("Home", "Astronauts");
+            
         }
+            
         public IActionResult Aboutus()
         {
-
-            var model = _homeService.GetAboutUsViewModel();
-            return View(model);
+                return RedirectToAction("Home", "AboutUs");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

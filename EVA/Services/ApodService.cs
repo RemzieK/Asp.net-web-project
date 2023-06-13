@@ -7,7 +7,7 @@ namespace EVA.Services
 {
     public class ApodService
     {
-        public async Task<ApodDetailDto?> GetApodData(DateTime date)
+        public async Task<ApodDto?> GetApodData(DateTime date)
         {
             string apiKey = "1sE8xPiPS0UEox0lNzCyduo8GLuENVRjvN7q0SMV";
             string dateStr = date.ToString("yyyy-MM-dd");
@@ -19,7 +19,7 @@ namespace EVA.Services
                 if (response.IsSuccessStatusCode)
                 {
                     string json = await response.Content.ReadAsStringAsync();
-                    ApodDetailDto? apod = JsonConvert.DeserializeObject<ApodDetailDto>(json);
+                    ApodDto? apod = JsonConvert.DeserializeObject<ApodDto>(json);
                     return apod;
                 }
                 else

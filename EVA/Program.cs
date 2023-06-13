@@ -9,7 +9,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ApodService>();
 builder.Services.AddScoped<IAboutUsService, AboutUsService>();
 builder.Services.AddScoped<IAstronautsService, AstronautsService>();
-builder.Services.AddScoped<IHomeService, HomeService>();
 builder.Services.AddScoped<IGalaxiesService, GalaxiesService>();
 builder.Services.AddScoped<IPlanetsService,PlanetsService>();
 builder.Services.AddScoped<IIndexService, IndexService>();
@@ -35,8 +34,8 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
    name: "index",
-    pattern: "{controller=Home}/{action=Index}/{id?}",
-    defaults: new { controller = "Home", action = "Index" });
+    pattern: "{controller=Index}/{action=Index}/{id?}",
+    defaults: new { controller = "Index", action = "Index" });
 
 app.MapControllerRoute(
     name: "apod",
@@ -47,21 +46,21 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "aboutus",
     pattern: "aboutus",
-    defaults: new { controller = "Home", action = "Aboutus" });
+    defaults: new { controller = "AboutUs", action = "Aboutus" });
 
 app.MapControllerRoute(
     name: "planets",
     pattern: "planets",
-    defaults: new { controller = "Home", action = "Planets" });
+    defaults: new { controller = "Planets", action = "Planets" });
 
 app.MapControllerRoute(
     name: "galaxies",
     pattern: "galaxies",
-    defaults: new { controller = "Home", action = "Galaxies" });
+    defaults: new { controller = "Galaxies", action = "Galaxies" });
 
 app.MapControllerRoute(
     name: "astronauts",
     pattern: "astronauts",
-    defaults: new { controller = "Home", action = "Astronauts" });
+    defaults: new { controller = "Astronauts", action = "Astronauts" });
 
 app.Run();
