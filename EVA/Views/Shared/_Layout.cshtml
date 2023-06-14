@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,27 +9,31 @@
 
     <title>EVA</title>
 
-	<link href="~/assets/css/animate.css" rel="stylesheet" />
-	<link href="~/assets/css/flex-slider.css" rel="stylesheet" />
-	<link href="~/assets/css/fontawesome.css" rel="stylesheet" />
-	<link href="~/assets/css/owl.css" rel="stylesheet" />
-	<link href="~/assets/css/templatemo-liberty-market.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link href="/assets/css/animate.css" rel="stylesheet" />
+	<link href="/assets/css/flex-slider.css" rel="stylesheet" />
+	<link href="/assets/css/fontawesome.css" rel="stylesheet" />
+	<link href="/assets/css/owl.css" rel="stylesheet" />
+	<link href="/assets/css/templatemo-liberty-market.css" rel="stylesheet" />
+    <link rel="icon" type="/image/png" sizes="16x16" href="/favicon-16x16.png">
 	
-	<script src="~/assets/js/custom.js"></script>
-	<script src="~/assets/js/isotope.js"></script>
-	<script src="~/assets/js/isotope.min.js"></script>
-	<script src="~/assets/js/owl-carousel.js"></script>
-	<script src="~/assets/js/popup.js"></script>
-	<script src="~/assets/js/tabs.js"></script>
+   @* <script src="/vendor/jquery/jquery.min.js"></script>*@
+	<script src="/assets/js/custom.js"></script>
+	<script src="/assets/js/isotope.js"></script>
+	<script src="/assets/js/isotope.min.js"></script>
+	<script src="/assets/js/owl-carousel.js"></script>
+	<script src="/assets/js/popup.js"></script>
+	<script src="/assets/js/tabs.js"></script>
+
+   
+
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-liberty-market.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/css/templatemo-liberty-market.css">
+    <link rel="stylesheet" href="/assets/css/owl.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 <body>
@@ -52,17 +57,42 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/index" class="logo">
-                            <img src="assets/images/Eva logo.png" alt="pic">
+                            <img src="/assets/images/Eva logo.png" alt="pic">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
+                        
+
+                       <ul class="nav">
                             <li><a href="/" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">Home</a></li>
                             <li><a href="/planets" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Planets" ? "active" : "")">Planets</a></li>
                             <li><a href="/galaxies" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Galaxies" ? "active" : "")">Galaxies</a></li>
                             <li><a href="/astronauts" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Astronauts" ? "active" : "")">Astronauts</a></li>
-                          <li><a href="/apod" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Apod" ? "active" : "")">Apod</a></li>
+                            <li><a href="/apod" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Apod" ? "active" : "")">Apod</a></li>
                             <li><a href="/aboutus" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Aboutus" ? "active" : "")">About us</a></li>
+
+                            @if (Context.User.Identity.IsAuthenticated)
+                            {
+                             
+                                <li><a href="/Dashboard/DashDisplay" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "DashDisplay" ? "active" : "")">Dashboard</a></li>
+                                @if (User.IsInRole("admin"))
+                                {
+                                    <li><a href="/Admin/AdminDisplay" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "AdminDisplay" ? "active" : "")">Admin page</a></li>
+                                  
+                                }
+                                <li><a href="/UserAuthentication/Logout" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Logout" ? "active" : "")">Logout</a></li>
+
+                            }
+                            else
+                            {
+                                <li><a href="/UserAuthentication/Login" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Login" ? "active" : "")">Login</a></li>
+                            }
+
+
+                         @*   <li><a href="/UserAuthentication/Login" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Login" ? "active" : "")">Login</a></li>
+                            <li><a href="/Dashboard/Display" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Display" ? "active" : "")">Dashboard</a></li>
+                            <li><a href="/UserAuthentication/Logout" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Logout" ? "active" : "")">Logout</a></li>
+*@
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -116,12 +146,12 @@
     </footer>
     <!--====== FOOTER ENDS ======-->
     <!-- Scripts -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/isotope.min.js"></script>
+    <script src="/assets/js/owl-carousel.js"></script>
+    <script src="/assets/js/tabs.js"></script>
+    <script src="/assets/js/popup.js"></script>
+    <script src="/assets/js/custom.js"></script>
 </body>
 </html>

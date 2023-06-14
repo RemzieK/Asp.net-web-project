@@ -1,6 +1,10 @@
 using EVA.IServices;
 using EVA.Services;
-using System;
+using EVA.Models.Domain;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using EVA.Repositories_regi.Abstract;
+using EVA.Repositories_regi.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +17,21 @@ builder.Services.AddScoped<IGalaxiesService, GalaxiesService>();
 builder.Services.AddScoped<IPlanetsService,PlanetsService>();
 builder.Services.AddScoped<IIndexService, IndexService>();
 
+builder.Services.AddDbContext<DatabaseContext>(options=> options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
+//for idenitity
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<DatabaseContext>()
+    .AddDefaultTokenProviders();
+builder.Services.ConfigureApplicationCookie(op=> op.LoginPath="/UserAuthentication/Login");
+
+builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+    options.Cookie.HttpOnly = true; // Configure session cookie
+    // Add more session options as needed
+});
 
 var app = builder.Build();
 
@@ -30,7 +49,12 @@ app.UseStaticFiles();
 
 
 app.UseRouting();
+
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
+
 
 app.MapControllerRoute(
    name: "index",
@@ -62,5 +86,28 @@ app.MapControllerRoute(
     name: "astronauts",
     pattern: "astronauts",
     defaults: new { controller = "Astronauts", action = "Astronauts" });
+
+app.MapControllerRoute(
+    name: "login",
+    pattern: "/UserAuthentication/Login",
+    defaults: new { controller = "UserAuthentication", action = "Login" });
+
+
+app.MapControllerRoute(
+    name: "dashboard",
+    pattern: "/Dashboard/DashDisplay",
+    defaults: new { controller = "Dashboard", action = "DashDisplay" });
+
+app.MapControllerRoute(
+    name: "logout",
+    pattern: "/UserAuthentication/Logout",
+    defaults: new { controller = "UserAuthentication", action = "Logout" });
+
+app.MapControllerRoute(
+    name: "registration",
+    pattern: "UserAuthentication/Registration",
+    defaults: new { controller = "UserAuthentication", action = "Registration" });
+
+
 
 app.Run();

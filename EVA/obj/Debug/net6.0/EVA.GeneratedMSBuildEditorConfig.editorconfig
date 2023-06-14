@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Remi\Pictures\Visual Studio\EVASolution\EVA
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Remi/Pictures/Visual Studio/EVASolution/EVA/Views/Admin/AdminDisplay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5EaXNwbGF5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Remi/Pictures/Visual Studio/EVASolution/EVA/Views/Dashboard/DashDisplay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERhc2hEaXNwbGF5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Remi/Pictures/Visual Studio/EVASolution/EVA/Views/Home/Aboutus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dHVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -45,6 +53,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Remi/Pictures/Visual Studio/EVASolution/EVA/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Remi/Pictures/Visual Studio/EVASolution/EVA/Views/UserAuthentication/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhlbnRpY2F0aW9uXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Remi/Pictures/Visual Studio/EVASolution/EVA/Views/UserAuthentication/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhlbnRpY2F0aW9uXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Remi/Pictures/Visual Studio/EVASolution/EVA/Views/_ViewImports.cshtml]

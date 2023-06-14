@@ -1,0 +1,107 @@
+﻿@model EVA.Models.DTO.RegistrationModel
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register</title>
+		<style>
+			input[type=text],input[type=password]{
+			width: 50%;
+			padding: 10px 15px;
+			margin: 6px 0;
+			display: inline-block;
+			border: 3px solid #ccc;
+			box-sizing: border-box;
+			}
+
+		form {
+			border: 3px solid #f1f1f1;
+			width: 60%;
+			margin: auto;
+			margin-top: 10%;
+		}
+
+
+		button {
+			background-color: #aa048b;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		container {
+			padding: 16px;
+		}
+
+		.msg {
+			padding: 0px;
+		}
+
+		.err {
+			color: red;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="page-heading">
+			<div class="container">
+				<div class="row">
+					 <div class="col-lg-12">
+						 <div ></div>
+						 <h2>Registration <em>Here</em>.</h2>
+				<form asp-action="Registration" method="post">
+					
+					<div >
+						<label>Name</label>
+						<input type="text" asp-for="Name"/>
+						<span asp-validation-for="Name"></span>
+					</div>
+
+						<div >
+							<label>Username</label>
+							<input type="text" asp-for="Username" />
+							<span class="msg" asp-validation-for="Username"></span>
+						</div>
+
+						<div >
+							<label>Email</label>
+							<input type="text"  asp-for="Email" />
+							<span class="msg" asp-validation-for="Email"></span>
+						</div>
+
+						<div >
+							<label>Password</label>
+							<input type="password"  asp-for="Password" />
+							<span class="msg" asp-validation-for="Password"></span>
+						</div>
+						
+						<div >
+							<label>Password Confirm</label>
+							<input type="password"  asp-for="PasswordConfirm" />
+							<span class="msg" asp-validation-for="PasswordConfirm"></span>
+						</div>
+
+						@if(TempData["msg"]!=null)
+						{
+							<div class="msg">
+							<span class="err">@TempData["msg"]</span>	
+							</div>
+						}
+
+						
+						
+						<button type="submit" >SignUp</button>
+						<a  href="/UserAuthentication/Login">Login</a>
+				</form>
+
+		
+
+		</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
