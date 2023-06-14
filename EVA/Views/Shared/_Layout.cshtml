@@ -16,7 +16,7 @@
 	<link href="/assets/css/templatemo-liberty-market.css" rel="stylesheet" />
     <link rel="icon" type="/image/png" sizes="16x16" href="/favicon-16x16.png">
 	
-   @* <script src="/vendor/jquery/jquery.min.js"></script>*@
+  
 	<script src="/assets/js/custom.js"></script>
 	<script src="/assets/js/isotope.js"></script>
 	<script src="/assets/js/isotope.min.js"></script>
@@ -61,8 +61,6 @@
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        
-
                        <ul class="nav">
                             <li><a href="/" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active" : "")">Home</a></li>
                             <li><a href="/planets" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Planets" ? "active" : "")">Planets</a></li>
@@ -87,12 +85,6 @@
                             {
                                 <li><a href="/UserAuthentication/Login" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Login" ? "active" : "")">Login</a></li>
                             }
-
-
-                         @*   <li><a href="/UserAuthentication/Login" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Login" ? "active" : "")">Login</a></li>
-                            <li><a href="/Dashboard/Display" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Display" ? "active" : "")">Dashboard</a></li>
-                            <li><a href="/UserAuthentication/Logout" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Logout" ? "active" : "")">Logout</a></li>
-*@
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -134,7 +126,7 @@
                     <ul class="list-unstyled text-muted">
                         <li><a href="/">Home</a></li>
                         <li><a href="/aboutus">About us</a></li>
-                        <li><a href="/registration">LogIn/SignIn</a></li>
+                        <li><a href="/UserAuthentication/Login">LogIn/Signin</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6">

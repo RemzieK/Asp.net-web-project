@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EVA.Controllers
 {
-    
     public class DashboardController : Controller
     {
         [Authorize]

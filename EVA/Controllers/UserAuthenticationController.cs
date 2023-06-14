@@ -31,8 +31,6 @@ namespace EVA.Controllers
             return RedirectToAction(nameof(Registration));
         }
 
-
-
         public IActionResult Login()
         {
             return View();

@@ -30,7 +30,6 @@ builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
     options.Cookie.HttpOnly = true; // Configure session cookie
-    // Add more session options as needed
 });
 
 var app = builder.Build();
@@ -91,7 +90,6 @@ app.MapControllerRoute(
     name: "login",
     pattern: "/UserAuthentication/Login",
     defaults: new { controller = "UserAuthentication", action = "Login" });
-
 
 app.MapControllerRoute(
     name: "dashboard",
