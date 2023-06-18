@@ -68,7 +68,7 @@
                             <li><a href="/astronauts" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Astronauts" ? "active" : "")">Astronauts</a></li>
                             <li><a href="/apod" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Apod" ? "active" : "")">Apod</a></li>
                             <li><a href="/aboutus" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Aboutus" ? "active" : "")">About us</a></li>
-
+                            <li><a href="/GalaxiesTable/GalaxiesTableView" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "GalaxiesTableView" ? "active" : "")">GalaxiesTable</a></li>
                             @if (Context.User.Identity.IsAuthenticated)
                             {
                              

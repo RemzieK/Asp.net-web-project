@@ -1,0 +1,51 @@
+﻿@model EVA.Models.GalaxyTable.GalaxiesTableModel
+
+<div class="page-heading">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="line-dec"></div>
+
+                <h1>Delete</h1>
+
+                <h3>Are you sure you want to delete this?</h3>
+                <div>
+                    <h4>Galaxy</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Location)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Location)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Shape)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Shape)
+                        </dd>
+                    </dl>
+
+                    <form asp-action="DeleteConfirmed" asp-controller="GalaxiesTable" asp-route-id="@Model.Id" method="post">
+                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                        @Html.ActionLink("Cancel", "GalaxiesTableView", null, new { @class = "btn btn-secondary" })
+                    </form>
+                </div>
+
+</div>
+        </div>
+    </div>
+</div>

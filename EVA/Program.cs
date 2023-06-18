@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using EVA.Repositories_regi.Abstract;
 using EVA.Repositories_regi.Implementation;
+using EVA.Models.GalaxyTable;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,8 @@ builder.Services.AddScoped<IAstronautsService, AstronautsService>();
 builder.Services.AddScoped<IGalaxiesService, GalaxiesService>();
 builder.Services.AddScoped<IPlanetsService,PlanetsService>();
 builder.Services.AddScoped<IIndexService, IndexService>();
+
+builder.Services.AddDbContext<GalaxyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("galaxy")));
 
 builder.Services.AddDbContext<DatabaseContext>(options=> options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
 //for idenitity
@@ -106,6 +110,9 @@ app.MapControllerRoute(
     pattern: "UserAuthentication/Registration",
     defaults: new { controller = "UserAuthentication", action = "Registration" });
 
-
+app.MapControllerRoute(
+    name: "galaxiestable",
+    pattern: "/GalaxiesTable/GalaxiesTableView",
+    defaults: new { controller = "GalaxiesTable", action = "GalaxiesTableView" });
 
 app.Run();
