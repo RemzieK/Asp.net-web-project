@@ -46,7 +46,7 @@ namespace EVA.Controllers
         // POST: Galaxies/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Location,Description,Shape")] GalaxiesTableModel galaxy)
+        public async Task<IActionResult> Create([Bind("Name,Location,Description,Shape")] GalaxiesTableModel galaxy)
         {
             if (ModelState.IsValid)
             {
@@ -102,12 +102,12 @@ namespace EVA.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(GalaxiesTableView));
             }
             return View(galaxy);
         }
 
-        // GET: Galaxies/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,8 +124,8 @@ namespace EVA.Controllers
             return View(galaxy);
         }
 
-        // POST: Galaxies/Delete/5
-        [HttpPost, ActionName("Delete")]
+       
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -134,6 +134,7 @@ namespace EVA.Controllers
             await _galaxyDbContext.SaveChangesAsync();
             return RedirectToAction(nameof(GalaxiesTableView));
         }
+
 
         private bool GalaxyExists(int id)
         {

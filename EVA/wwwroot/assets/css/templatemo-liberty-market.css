@@ -2448,7 +2448,7 @@ Create Page Style
 
 #contact label {
   font-size: 15px;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 8px;
 }
 
@@ -2484,12 +2484,12 @@ a:hover, a:focus {
 }
 
 .form-control {
-  background: #000000;
+  background: #ffffff;
   border-color: #000000;
 }
 
 .form-control:focus {
-  background: #000000;
+  background: #ffffff;
 }
 
 footer {
@@ -2584,4 +2584,27 @@ body {
 
 @media (max-width: 1200px) {
   
+}
+
+/*table style*/
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th,
+    .table td {
+        padding: 8px;
+        text-align: left;
+        vertical-align: middle;
+        border: 1px solid; /* Add borders to separate rows */
+        color: white; /* Set text color to white */
+    }
+
+.white-bg {
+    background-color: white;
+}
+.whitext{
+    color:white;
 }

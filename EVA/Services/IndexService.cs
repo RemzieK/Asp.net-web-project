@@ -22,7 +22,7 @@ namespace EVA.Services
                 AstronautsText = "Get to know the person trained, equipped and deployed by a human spaceflight program to serve as a commander or a crew member abroad a spacecraft.",
                 ApodTitle = "Astronomy Picture of the Day",
                 ApodOneTitle = "Vast Collection of Astronomical Images",
-                ApodOneText = "APOD has amassed a vast collection of stunning astronomical images since its launch in 1995. With over 10,000 featured images to date, it offers a visual journey through the cosmos.",
+                ApodOneText = "When registering to our site you get access to APOD. It has amassed a vast collection of stunning astronomical images since its launch in 1995. With over 10,000 featured images to date, it offers a visual journey through the cosmos.",
                 ApodTwoTitle = "Educational and Informative Content",
                 ApodTwoText = "APOD not only presents captivating visuals but also provides educational and informative descriptions written by astronomers. These explanations delve into the scientific concepts and phenomena depicted in the images, making it an excellent resource for both astronomy enthusiasts and those seeking to learn more about the universe. ",
                 ApodThreeTitle = "Community Engagement and Global Reach",

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="templatemo">
+  @*  <meta name="author" content="templatemo">*@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -17,18 +17,18 @@
     <link rel="icon" type="/image/png" sizes="16x16" href="/favicon-16x16.png">
 	
   
-	<script src="/assets/js/custom.js"></script>
+	
 	<script src="/assets/js/isotope.js"></script>
 	<script src="/assets/js/isotope.min.js"></script>
 	<script src="/assets/js/owl-carousel.js"></script>
 	<script src="/assets/js/popup.js"></script>
 	<script src="/assets/js/tabs.js"></script>
-
+	<script src="/assets/js/custom.js"></script>
    
 
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="/assets/css/fontawesome.css">
     <link rel="stylesheet" href="/assets/css/templatemo-liberty-market.css">
@@ -66,12 +66,12 @@
                             <li><a href="/planets" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Planets" ? "active" : "")">Planets</a></li>
                             <li><a href="/galaxies" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Galaxies" ? "active" : "")">Galaxies</a></li>
                             <li><a href="/astronauts" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Astronauts" ? "active" : "")">Astronauts</a></li>
-                            <li><a href="/apod" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Apod" ? "active" : "")">Apod</a></li>
+                           
                             <li><a href="/aboutus" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Aboutus" ? "active" : "")">About us</a></li>
                             <li><a href="/GalaxiesTable/GalaxiesTableView" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "GalaxiesTableView" ? "active" : "")">GalaxiesTable</a></li>
                             @if (Context.User.Identity.IsAuthenticated)
                             {
-                             
+                              <li><a href="/apod" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "Apod" ? "active" : "")">Apod</a></li>
                                 <li><a href="/Dashboard/DashDisplay" class="@(ViewContext.RouteData.Values["Action"]?.ToString() == "DashDisplay" ? "active" : "")">Dashboard</a></li>
                                 @if (User.IsInRole("admin"))
                                 {
@@ -115,7 +115,6 @@
                     <h5 class="text-white mb-3">Pages</h5>
                     <ul class="list-unstyled text-muted">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/apod">Apod</a></li>
                         <li><a href="/astronauts">Astronauts</a></li>
                         <li><a href="/galaxies">Galaxies</a></li>
                         <li><a href="/planets">Planets</a></li>
@@ -138,9 +137,10 @@
     </footer>
     <!--====== FOOTER ENDS ======-->
     <!-- Scripts -->
+	
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/js/isotope.min.js"></script>
+	<script src="/assets/js/isotope.min.js"></script>
     <script src="/assets/js/owl-carousel.js"></script>
     <script src="/assets/js/tabs.js"></script>
     <script src="/assets/js/popup.js"></script>
