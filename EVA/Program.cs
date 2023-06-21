@@ -115,7 +115,4 @@ app.MapControllerRoute(
     pattern: "/GalaxiesTable/GalaxiesTableView",
     defaults: new { controller = "GalaxiesTable", action = "GalaxiesTableView" });
 
-
-
-
 app.Run();
